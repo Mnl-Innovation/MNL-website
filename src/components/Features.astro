@@ -1,93 +1,258 @@
 ---
-interface Props {
-}
+interface Props {}
 
 const {} = Astro.props;
 ---
 
-<div class="mx-auto mt-12 max-w-7xl px-6 sm:mt-32 lg:px-8">
-    <div class="mx-auto max-w-2xl lg:text-center">
-        <h2 class="text-base font-semibold leading-7">
-            <span class="bg-[#00629e] text-white px-4 py-1 rounded-full">Who we are</span>
-        </h2>
-        <p class="mt-2 text-3xl font-roboto tracking-tight text-gray-900 sm:text-4xl">
-            We don’t just provide services; we build partnerships. Our team tailors solutions that align with your business goals.  
-        </p>
-        <p class="mt-6 text-lg leading-8 font-nunito text-gray-600">
-            <strong>MNL Innovation LLC</strong> is a forward-thinking IT solutions provider dedicated to helping businesses evolve through technology. We deliver end-to-end IT services—from infrastructure design and cybersecurity to software development and strategic consulting.
-            
-        </p>
-    </div>
-    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-            <div class="relative pl-16">
-                <dt class="text-base font-semibold leading-7 text-gray-900">
-                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-black">
-                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor"
-                             aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"/>
-                        </svg>
-                    </div>
-                    Secure backups
-                </dt>
-                <dd class="mt-2 text-base leading-7 text-gray-600">
-                    Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna
-                    massa nunc massa.
-                </dd>
-            </div>
-            <div class="relative pl-16">
-                <dt class="text-base font-semibold leading-7 text-gray-900">
-                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-black">
-                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor"
-                             aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/>
-                        </svg>
-                    </div>
-                    SSL certificates
-                </dt>
-                <dd class="mt-2 text-base leading-7 text-gray-600">
-                    Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam
-                    turpis enim lacus amet.
-                </dd>
-            </div>
-            <div class="relative pl-16">
-                <dt class="text-base font-semibold leading-7 text-gray-900">
-                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-black">
-                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor"
-                             aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
-                        </svg>
-                    </div>
-                    Simple queues
-                </dt>
-                <dd class="mt-2 text-base leading-7 text-gray-600">
-                    Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo
-                    diam neque.
-                </dd>
-            </div>
-            <div class="relative pl-16">
-                <dt class="text-base font-semibold leading-7 text-gray-900">
-                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-black">
-                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor"
-                             aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33"/>
-                        </svg>
-                    </div>
-                    Advanced security
-                </dt>
-                <dd class="mt-2 text-base leading-7 text-gray-600">Arcu egestas dolor vel iaculis in ipsum mauris.
-                    Tincidunt
-                    mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.
-                </dd>
-            </div>
-        </dl>
-    </div>
+<div class="mx-auto mt-12 max-w-7xl px-6 sm:mt-32 lg:px-8" id="services">
+	<div class="mx-auto max-w-2xl lg:text-center">
+		<h2 class="text-base font-semibold leading-7">
+			<span class="bg-[#00629e] text-white px-4 py-1 rounded-full"
+				>Services</span
+			>
+		</h2>
+		<p
+			class="mt-2 text-3xl font-roboto tracking-tight text-gray-900 sm:text-4xl"
+		>
+			We don’t just provide services; we build partnerships. Our team tailors
+			solutions that align with your business goals.
+		</p>
+		<!-- <p class="mt-6 text-lg leading-8 font-nunito text-gray-600">
+			<strong>MNL Innovation LLC</strong> is a forward-thinking IT solutions provider
+			dedicated to helping businesses evolve through technology. We deliver end-to-end
+			IT services—from infrastructure design and cybersecurity to software development
+			and strategic consulting.
+		</p> -->
+	</div>
+	<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+		<dl
+			class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16"
+		>
+			<div class="relative pl-16">
+				<dt class="text-base font-semibold leading-7 text-gray-900">
+					<div
+						class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00629e]"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="h-6 w-6 text-white"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"
+							></path>
+						</svg>
+					</div>
+					Managed IT Services
+				</dt>
+				<dd class="mt-2 text-base leading-7 text-gray-600">
+					Proactive management of your IT systems to ensure reliability,
+					performance, and expert support.
+				</dd>
+			</div>
+			<div class="relative pl-16">
+				<dt class="text-base font-semibold leading-7 text-gray-900">
+					<div
+						class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00629e]"
+					>
+						<svg
+							class="h-6 w-6 text-white"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
+							></path>
+						</svg>
+					</div>
+					Cloud Solutions
+				</dt>
+				<dd class="mt-2 text-base leading-7 text-gray-600">
+					Scalable and secure infrastructure using Microsoft 365, Google
+					Workspace, and more.
+				</dd>
+			</div>
+			<div class="relative pl-16">
+				<dt class="text-base font-semibold leading-7 text-gray-900">
+					<div
+						class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00629e]"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="h-6 w-6 text-white"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+							></path>
+						</svg>
+					</div>
+					Cybersecurity
+				</dt>
+				<dd class="mt-2 text-base leading-7 text-gray-600">
+					Multi-layer protection with threat detection, firewall security, and
+					compliance audits.
+				</dd>
+			</div>
+			<div class="relative pl-16">
+				<dt class="text-base font-semibold leading-7 text-gray-900">
+					<div
+						class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00629e]"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="h-6 w-6 text-white"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"
+							></path>
+						</svg>
+					</div>
+					Software Development
+				</dt>
+				<dd class="mt-2 text-base leading-7 text-gray-600">
+					Custom applications and integrations tailored to your workflow.
+				</dd>
+			</div>
+			<div class="relative pl-16">
+				<dt class="text-base font-semibold leading-7 text-gray-900">
+					<div
+						class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00629e]"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="h-6 w-6 text-white"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
+							></path>
+						</svg>
+					</div>
+					Strategic IT Consulting
+				</dt>
+				<dd class="mt-2 text-base leading-7 text-gray-600">
+					Virtual CIO support, IT planning, budgeting, and vendor management.
+				</dd>
+			</div>
+			<div class="relative pl-16">
+				<dt class="text-base font-semibold leading-7 text-gray-900">
+					<div
+						class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00629e]"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="h-6 w-6 text-white"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"
+							></path>
+						</svg>
+					</div>
+					Data Analytics
+				</dt>
+				<dd class="mt-2 text-base leading-7 text-gray-600">
+					Transform data into decisions with dashboards, KPIs, and predictive
+					analysis.
+				</dd>
+			</div>
+			<div class="relative pl-16">
+				<dt class="text-base font-semibold leading-7 text-gray-900">
+					<div
+						class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00629e]"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							class="h-6 w-6 text-white"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-grid2x2-icon lucide-grid-2x2"
+							><path d="M12 3v18"></path><path d="M3 12h18"></path><rect
+								x="3"
+								y="3"
+								width="18"
+								height="18"
+								rx="2"></rect></svg
+						>
+					</div>
+					Microsoft 365 Services
+				</dt>
+				<dd class="mt-2 text-base leading-7 text-gray-600">
+					Tenant setup, email migration, security configuration, and user
+					training.
+				</dd>
+			</div>
+			<div class="relative pl-16">
+				<dt class="text-base font-semibold leading-7 text-gray-900">
+					<div
+						class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-[#00629e]"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+                            class="h-6 w-6 text-white"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-binary-icon lucide-binary"
+							><rect x="14" y="14" width="4" height="6" rx="2"></rect><rect
+								x="6"
+								y="4"
+								width="4"
+								height="6"
+								rx="2"></rect><path d="M6 20h4"></path><path d="M14 10h4"
+							></path><path d="M6 14h2v6"></path><path d="M14 4h2v6"
+							></path></svg
+						>
+					</div>
+					Innovation & Emerging Tech
+				</dt>
+				<dd class="mt-2 text-base leading-7 text-gray-600">
+					AI, IoT, and automation strategies to modernize your operations.
+				</dd>
+			</div>
+		</dl>
+	</div>
 </div>
