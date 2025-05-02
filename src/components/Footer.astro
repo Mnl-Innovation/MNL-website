@@ -2,31 +2,52 @@
 interface Props {}
 
 const {} = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer aria-labelledby="footer-heading" class="relative border-t border-gray-900/10 py-24 sm:py-32">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-        <img class="h-7" src="/logo-black.png" alt="Company name">
+        <img class="h-24" src="/logo.png" alt="Company name">
         <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div class="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                    <h3 class="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
+                    <h3 class="text-sm font-semibold leading-6 text-gray-900">Services</h3>
                     <ul role="list" class="mt-6 space-y-4">
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Chat bots</a>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Managed IT Services</a>
                         </li>
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Calls</a>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Cloud Solutions</a>
                         </li>
                         <li>
                             <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">
-                                Video calls
+                                Cybersecurity
                             </a>
                         </li>
                         <li>
                             <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">
-                                Chats
+                                Software Development
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                                Strategic IT Consulting
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                                Data Analytics
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                                Microsoft 365 Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                                Innovation & Emerging Tech
                             </a>
                         </li>
                     </ul>
@@ -35,47 +56,41 @@ const {} = Astro.props;
                     <h3 class="text-sm font-semibold leading-6 text-gray-900">Support</h3>
                     <ul role="list" class="mt-6 space-y-4">
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Pricing</a>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">oscar@mnlinnovation.com</a>
                         </li>
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Documentation</a>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">support@mnlinnovation.atlassian.net</a>
                         </li>
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Guides</a>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">+1 700 567 2303</a>
                         </li>
                         <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">API Reference</a>
+                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Hours: Monday to Friday, 9:00 AM to 6:00 PM (EST)</a>
                         </li>
+                        
                     </ul>
                 </div>
             </div>
-            <div class="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                    <h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
-                    <ul role="list" class="mt-6 space-y-4">
-                        <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">About</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Jobs</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mt-10 md:mt-0">
-                    <h3 class="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
-                    <ul role="list" class="mt-6 space-y-4">
-                        <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Privacy</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Terms</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            
+        </div>
+    </div>
+    <div class="mt-12 border-t border-gray-900/10 pt-8 text-center">
+        <p class="text-sm leading-6 text-gray-600">
+            &copy; {currentYear} MNL Innovation. All rights reserved.
+        </p>
+        <div class="mt-6 flex justify-center space-x-6">
+            <a href="https://linkedin.com" class="text-gray-600 hover:text-gray-900">
+                <span class="sr-only">LinkedIn</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5.5c0-1.1-.9-2-2-2s-2 .9-2 2v5.5h-3v-10h3v1.5c.88-1.32 2.5-2.25 4-2.25 2.21 0 4 1.79 4 4v6.75z" />
+                </svg>
+            </a>
+            <a href="https://github.com" class="text-gray-600 hover:text-gray-900">
+                <span class="sr-only">GitHub</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.385-1.333-1.754-1.333-1.754-1.09-.744.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492.997.108-.774.418-1.305.762-1.605-2.665-.305-5.466-1.333-5.466-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.536-1.523.116-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.236 1.912 1.236 3.222 0 4.61-2.807 5.625-5.478 5.92.43.37.815 1.096.815 2.21v3.285c0 .32.218.694.825.577 4.765-1.585 8.2-6.085 8.2-11.385 0-6.63-5.37-12-12-12z" />
+                </svg>
+            </a>
         </div>
     </div>
 </footer>
