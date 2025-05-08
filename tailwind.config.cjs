@@ -5,8 +5,9 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				'roboto': ['Roboto', 'sans-serif'],
-				'nunito': ["'Nunito'", 'sans-serif'],
+				// 'roboto': ['Roboto', 'sans-serif'],
+				// 'nunito': ["'Nunito'", 'sans-serif'],
+				'sans': ['sans-serif'],
 			},
 		},
 	},
