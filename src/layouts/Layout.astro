@@ -6,19 +6,20 @@ import Header from '../components/Header.astro';
 interface Props {
   title: string;
   keywords: string;
+  description: string;
 }
 
-const {title, keywords} = Astro.props;
+const {title, keywords, description} = Astro.props;
 ---
 <!DOCTYPE html>
 <html class="h-full bg-gray-50" lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="description" content="MNL Innovation - Empowering Business Through Technology">
-  <meta name="keywords" content="MNL Innovation, Technology, Business Solutions, IT Services, Digital Transformation"/>
+  <meta name="description" content={description}/>
+  <meta name="keywords" content={keywords}/>
   <meta name="author" content="MNL Innovation"/>
   <meta name="viewport" content="width=device-width"/>
-  <link rel="icon" type="image/svg+xml" href="/logo.png"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
   <meta name="generator" content="Dashboard"/>
   <title>{title}</title>
 
