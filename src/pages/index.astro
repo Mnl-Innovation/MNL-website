@@ -1,23 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Logos from '../components/Logos.astro';
-import Features from '../components/Features.astro';
-import CTA from '../components/CTA.astro';
-import Partners from '../components/Partners.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Logos from "../components/Logos.astro";
+import Features from "../components/Features.astro";
+import CTA from "../components/CTA.astro";
+import Partners from "../components/Partners.astro";
 ---
 
-<Layout title="MNL Innovation  - Empowering Business Through Technology" keywords="MNL Innovation, Technology, Business Solutions, IT Services, Digital Transformation">
+<Layout
+	title="MNL Innovation  - Empowering Business Through Technology"
+	keywords="MNL Innovation, Technology, Business Solutions, IT Services, Digital Transformation"
+	description="IT solutions provider dedicated to helping businesses evolve through technology. We deliver end-to-end IT services—from infrastructure design and cybersecurity to software development and strategic consulting."
+>
+	<!-- Hero section -->
+	<Hero />
+	<!-- Logo cloud -->
+	<Logos />
+	<!-- Feature section -->
+	<Features />
 
-    <!-- Hero section -->
-    <Hero/>
-    <!-- Logo cloud -->
-    <Logos/>
-    <!-- Feature section -->
-    <Features/>
-    
-    <Partners/>
-    
-    <CTA/>
+	<Partners />
 
+	<CTA />
 </Layout>
