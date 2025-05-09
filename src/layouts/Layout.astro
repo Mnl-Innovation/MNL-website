@@ -49,14 +49,24 @@ const {title, keywords, description} = Astro.props;
 
 
 <script>
-  const navBar: HTMLElement = document.getElementById('navBar')!;
-  const closeNavBar = document.getElementById('closeNavBar')!;
-  const openNavBar = document.getElementById('openNavBar')!;
+  function setupMenuToggle() {
+    const navBar: HTMLElement = document.getElementById('navBar')!;
+    const closeNavBar = document.getElementById('closeNavBar')!;
+    const openNavBar = document.getElementById('openNavBar')!;
 
-  closeNavBar.addEventListener('click', toggleMenu);
-  openNavBar.addEventListener('click', toggleMenu);
+    closeNavBar.addEventListener('click', toggleMenu);
+    openNavBar.addEventListener('click', toggleMenu);
 
-  function toggleMenu() {
-    navBar.classList.toggle("hidden");
+    function toggleMenu() {
+      navBar.classList.toggle("hidden");
+    }
   }
+
+  // Inicializar el menú toggle al cargar la página
+  setupMenuToggle();
+
+  // Re-enlazar eventos después de cada navegación
+  document.addEventListener('astro:after-swap', () => {
+    setupMenuToggle();
+  });
 </script>
