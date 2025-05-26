@@ -6,128 +6,100 @@ const {} = Astro.props;
 
 <div class="">
 	<div
-		class="hero relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20"
+		class="mx-auto max-w-7xl pb-24 pt-24 sm:pb-32 lg:grid lg:grid-cols-2 lg:px-8 lg:py-40"
 	>
-		<div
-			class="mx-auto max-w-7xl pb-24 pt-24 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40"
-		>
-			<div class="px-6 lg:px-0 lg:pt-4">
-				<div class="mx-auto max-w-2xl">
-					<div class="max-w-lg">
-						
-						<h1
-							class="mt-10 text-4xl font-roboto font-bold tracking-tight text-gray-900 sm:text-6xl"
+		<div class="px-6 lg:px-0 lg:pt-4">
+			<div class="mx-auto max-w-2xl">
+				<div class="max-w-lg">
+					<h1
+						class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+					>
+						Empowering Business Through Technology
+					</h1>
+					<p class="mt-6 text-lg text-gray-600">
+						We partner with organizations to streamline operations, enhance
+						productivity, and unlock new opportunities through innovative
+						digital solutions. Whether it’s cloud infrastructure, cybersecurity,
+						automation, or business process optimization, we deliver tailored
+						technology strategies that align with your goals and drive
+						sustainable growth.
+					</p>
+					<div class="mt-10 flex items-center gap-x-6">
+						<a
+							href="/contact"
+							class="rounded-md bg-[#1dc690] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1dc690] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
 						>
-							Empowering Business Through Technology
-						</h1>
-						<p class="mt-6 text-lg text-gray-600">
-							We partner with organizations to streamline operations, enhance
-							productivity, and unlock new opportunities through innovative
-							digital solutions. Whether it’s cloud infrastructure,
-							cybersecurity, automation, or business process optimization, we
-							deliver tailored technology strategies that align with your goals
-							and drive sustainable growth.
-						</p>
-						<div class="mt-10 flex items-center gap-x-6">
-							<a
-								href="/contact"
-								class="rounded-md bg-[#1dc690]  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1dc690] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-							>
-                            Get in touch
-							</a>
-						
-						</div>
+							Get in touch
+						</a>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<div
-				class="mt-20 px-1 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen relative"
-			>
-				<img
-					id="image"
-					class="rounded-xl top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-1000 ease-in-out"
-					src="/images/hero-mnl-1.jpg"
-				/>
-				<!-- <div class="absolute top-0 right-0 rounded-bl-xl p-6 bg-gray-50">
-					<svg
-						class="h-2 w-2 inline fill-black mr-2"
-						viewBox="0 0 6 6"
-						aria-hidden="true"
-					>
-						<circle cx="3" cy="3" r="3"></circle>
-					</svg>
-					<svg
-						class="h-2 w-2 inline fill-gray-300 mr-2"
-						viewBox="0 0 6 6"
-						aria-hidden="true"
-					>
-						<circle cx="3" cy="3" r="3"></circle>
-					</svg>
-					<svg
-						class="h-2 w-2 inline fill-gray-300 mr-2"
-						viewBox="0 0 6 6"
-						aria-hidden="true"
-					>
-						<circle cx="3" cy="3" r="3"></circle>
-					</svg>
-				</div> -->
-
+		<div
+			class="mt-20 px-1 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen relative"
+		>
+			<img
+				id="image"
+				class="rounded-xl top-0 left-0 w-full h-auto duration-1000 ease-in-out"
+				src="/images/hero-2.png"
+			/>
 		</div>
 		<div
 			class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32"
 		>
 		</div>
 	</div>
-</div>
 
-<script is:inline>
-	const images = [
-		"/images/hero-mnl-1.jpg",
-		"/images/hero-mnl-3.jpg"
-	];
-	let currentIndex = 0;
+	<script is:inline>
+		const images = [
+			"/images/hero-2.png",
+			"/images/hero-3.png",
+			
+		];
+		let currentIndex = 0;
 
-	function initializeImageTransition() {
-		const imageElement = document.getElementById("image");
+		function initializeImageTransition() {
+			const imageElement = document.getElementById("image");
 
-		// Debugging: Log the initial image element and its source
-		console.log("Image element:", imageElement);
-		console.log("Initial image source:", imageElement?.src);
+			// Debugging: Log the initial image element and its source
+			console.log("Image element:", imageElement);
+			console.log("Initial image source:", imageElement?.src);
 
-		// Initially, set the image opacity to 100 to ensure it is visible
-		imageElement?.classList.remove("opacity-0");
+			// Initially, set the image opacity to 100 to ensure it is visible
+			imageElement?.classList.remove("opacity-0");
 
-		function changeImage() {
-			// Add opacity class 0 to make the current image transparent
-			imageElement?.classList.add("opacity-0");
+			function changeImage() {
+				// Add opacity class 0 to make the current image transparent
+				imageElement?.classList.add("opacity-0");
 
-			setTimeout(() => {
-				currentIndex++;
-				if (currentIndex >= images.length) {
-					currentIndex = 0;
-				}
-				if (imageElement) {
-					imageElement.src = images[currentIndex];
+				setTimeout(() => {
+					currentIndex++;
+					if (currentIndex >= images.length) {
+						currentIndex = 0;
+					}
+					if (imageElement) {
+						imageElement.src = images[currentIndex];
 
-					// Debugging: Log the new image source
-					console.log("New image source:", imageElement.src);
+						// Debugging: Log the new image source
+						console.log("New image source:", imageElement.src);
 
-					// Wait for the image to load before making it visible
-					imageElement.onload = () => {
-						imageElement.classList.remove("opacity-0"); // Make the new image visible
-					};
-				}
-			}, 1000); // This time should match the duration of the opacity transition
+						// Wait for the image to load before making it visible
+						imageElement.onload = () => {
+							imageElement.classList.remove("opacity-0"); // Make the new image visible
+						};
+					}
+				}, 1000); // This time should match the duration of the opacity transition
+			}
+
+			// Starts image transition every 7 seconds (includes 1 second for transition duration)
+			setInterval(changeImage, 7000);
 		}
 
-		// Starts image transition every 4 seconds (includes 1 second for transition duration)
-		setInterval(changeImage, 3000);
-	}
+		// Listen for Astro's custom event when the component is mounted
+		document.addEventListener("astro:after-swap", initializeImageTransition);
 
-	// Listen for Astro's custom event when the component is mounted
-	document.addEventListener("astro:after-swap", initializeImageTransition);
-
-	// Run the function immediately in case the page is loaded directly
-	initializeImageTransition();
-</script>
+		// Run the function immediately in case the page is loaded directly
+		initializeImageTransition();
+	</script>
+</div>
