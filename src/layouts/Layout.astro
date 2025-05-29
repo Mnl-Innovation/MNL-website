@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 
@@ -12,7 +11,7 @@ interface Props {
 const {title, keywords, description} = Astro.props;
 ---
 <!DOCTYPE html>
-<html class="h-full bg-gray-50" lang="en">
+<html class="h-full bg-white" lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="description" content={description}/>
@@ -24,9 +23,9 @@ const {title, keywords, description} = Astro.props;
   <title>{title}</title>
 
   
-  <ViewTransitions />
+ 
 </head>
-<body class="h-full font-nunito">
+<body>
 
 <div class="bg-white">
  
