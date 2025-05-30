@@ -91,7 +91,6 @@ const {} = Astro.props;
 								maxlength="50"
 								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
 								required
-								
 							/>
 						</div>
 					</div>
@@ -110,7 +109,6 @@ const {} = Astro.props;
 								maxlength="50"
 								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
 								required
-								
 							/>
 						</div>
 					</div>
@@ -129,7 +127,6 @@ const {} = Astro.props;
 								maxlength="254"
 								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
 								required
-								
 							/>
 						</div>
 					</div>
@@ -170,17 +167,12 @@ const {} = Astro.props;
 					</div>
 				</div>
 
-				<!-- Google reCAPTCHA -->
-				<div
-					class="g-recaptcha"
-					data-sitekey="6Lcf1F0qAAAAAGGBLa_PZnnRbQ1xoSHQ5mcIrt_5"
-				>
-				</div>
+				<div class="cf-turnstile mt-5" data-sitekey="0x4AAAAAABfUYC-k_-g6SXhP"></div>
 
 				<div class="mt-8 flex justify-end">
 					<button
 						type="submit"
-						class="rounded-md border border-black bg-[#00629e] px-3.5 py-2.5 text-center text-sm font-nunito text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+						class="rounded-md border border-black bg-[#00629e] px-3.5 py-2.5 text-center text-sm text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
 					>
 						Send message
 					</button>
@@ -222,14 +214,6 @@ const {} = Astro.props;
 		.getElementById("contact-form")
 		.addEventListener("submit", function (event) {
 			event.preventDefault();
-
-			// Get the reCAPTCHA response token
-			// const recaptchaResponse = grecaptcha.getResponse();
-
-			// if (!recaptchaResponse) {
-			// 	alert("Please verify that you are not a robot.");
-			// 	return;
-			// }
 
 			emailjs.sendForm("service_dgte8o9", "template_vp3beyz", this).then(
 				function () {
