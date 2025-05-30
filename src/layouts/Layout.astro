@@ -1,69 +1,97 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
 interface Props {
-  title: string;
-  keywords: string;
-  description: string;
+	title: string;
+	keywords: string;
+	description: string;
 }
 
-const {title, keywords, description} = Astro.props;
+const { title, keywords, description } = Astro.props;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html class="h-full bg-white" lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="description" content={description}/>
-  <meta name="keywords" content={keywords}/>
-  <meta name="author" content="MNL Innovation"/>
-  <meta name="viewport" content="width=device-width"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
-  <meta name="generator" content="Dashboard"/>
-  <title>{title}</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content="MNL Innovation" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content="Dashboard" />
+		<title>{title}</title>
 
-  
- 
-</head>
-<body>
+		<!-- <script is:inline src="https://www.google.com/recaptcha/api.js" async defer
+		></script> -->
 
-<div class="bg-white">
- 
-  <Header/>
+		<!-- Google reCAPTCHA Enterprise -->
+		<!-- <script>
+			// Declare grecaptcha as a global variable
+			declare const grecaptcha: any;
 
-  <main class="isolate">
-    <slot />
-  </main>
+			function onClick(e: Event) {
+				e.preventDefault();
+				grecaptcha.enterprise.ready(async () => {
+					const token = await grecaptcha.enterprise.execute(
+						"6LdAclArAAAAABQsvptPjsGuaJK4ZdXj8m_ZjAQ3",
+						{ action: "LOGIN" }
+					);
+				});
+			}
+		</script> -->
+		<!-- emailjs config -->
+		<script
+			is:inline
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+		></script>
 
-  <!-- Footer -->
-  <div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
-    <Footer/>
-  </div>
-</div>
+		<!-- emailjs init -->
+		<script is:inline type="text/javascript">
+			(function () {
+				emailjs.init({
+					publicKey: "FxrijuoXpE9UWFLKJ",
+				});
+			})();
+		</script>
+	</head>
+	<body>
+		<div class="bg-white">
+			<Header />
 
-</body>
+			<main class="isolate">
+				<slot />
+			</main>
+
+			<!-- Footer -->
+			<div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
+				<Footer />
+			</div>
+		</div>
+	</body>
 </html>
 
-
 <script>
-  function setupMenuToggle() {
-    const navBar: HTMLElement = document.getElementById('navBar')!;
-    const closeNavBar = document.getElementById('closeNavBar')!;
-    const openNavBar = document.getElementById('openNavBar')!;
+	function setupMenuToggle() {
+		const navBar: HTMLElement = document.getElementById("navBar")!;
+		const closeNavBar = document.getElementById("closeNavBar")!;
+		const openNavBar = document.getElementById("openNavBar")!;
 
-    closeNavBar.addEventListener('click', toggleMenu);
-    openNavBar.addEventListener('click', toggleMenu);
+		closeNavBar.addEventListener("click", toggleMenu);
+		openNavBar.addEventListener("click", toggleMenu);
 
-    function toggleMenu() {
-      navBar.classList.toggle("hidden");
-    }
-  }
+		function toggleMenu() {
+			navBar.classList.toggle("hidden");
+		}
+	}
 
-  // Inicializar el menú toggle al cargar la página
-  setupMenuToggle();
+	// Inicializar el menú toggle al cargar la página
+	setupMenuToggle();
 
-  // Re-enlazar eventos después de cada navegación
-  document.addEventListener('astro:after-swap', () => {
-    setupMenuToggle();
-  });
+	// Re-enlazar eventos después de cada navegación
+	document.addEventListener("astro:after-swap", () => {
+		setupMenuToggle();
+	});
 </script>
