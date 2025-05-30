@@ -23,24 +23,8 @@ const { title, keywords, description } = Astro.props;
 		<meta name="generator" content="Dashboard" />
 		<title>{title}</title>
 
-		<!-- <script is:inline src="https://www.google.com/recaptcha/api.js" async defer
-		></script> -->
+		<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
-		<!-- Google reCAPTCHA Enterprise -->
-		<!-- <script>
-			// Declare grecaptcha as a global variable
-			declare const grecaptcha: any;
-
-			function onClick(e: Event) {
-				e.preventDefault();
-				grecaptcha.enterprise.ready(async () => {
-					const token = await grecaptcha.enterprise.execute(
-						"6LdAclArAAAAABQsvptPjsGuaJK4ZdXj8m_ZjAQ3",
-						{ action: "LOGIN" }
-					);
-				});
-			}
-		</script> -->
 		<!-- emailjs config -->
 		<script
 			is:inline
