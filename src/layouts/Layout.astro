@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
 
 interface Props {
 	title: string;
@@ -29,6 +30,13 @@ const { title, keywords, description } = Astro.props;
 			src="https://challenges.cloudflare.com/turnstile/v0/api.js"
 			async
 			defer></script>
+
+		<!-- Cloudflare Web Analytics -->
+		<script
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon='{"token": "${cfToken}"}'
+		></script><!-- End Cloudflare Web Analytics -->
 
 		<!-- emailjs config -->
 		<script
