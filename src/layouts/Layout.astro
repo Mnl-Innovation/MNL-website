@@ -23,7 +23,12 @@ const { title, keywords, description } = Astro.props;
 		<meta name="generator" content="Dashboard" />
 		<title>{title}</title>
 
-		<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+		<!-- Cloudflare reCAPTCHA -->
+		<script
+			is:inline
+			src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+			async
+			defer></script>
 
 		<!-- emailjs config -->
 		<script
