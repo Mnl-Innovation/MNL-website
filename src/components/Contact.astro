@@ -1,147 +1,230 @@
 ---
-interface Props {
-}
+interface Props {}
 
 const {} = Astro.props;
 ---
+
 <div class="relative isolate pt-24">
+	<div
+		class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 transform-gpu justify-center overflow-hidden blur-3xl sm:bottom-0 sm:right-[calc(50%-6rem)] sm:top-auto sm:translate-y-0 sm:transform-gpu sm:justify-end"
+		aria-hidden="true"
+	>
+		<div
+			class="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-25"
+			style="clip-path: polygon(73.6% 48.6%, 91.7% 88.5%, 100% 53.9%, 97.4% 18.1%, 92.5% 15.4%, 75.7% 36.3%, 55.3% 52.8%, 46.5% 50.9%, 45% 37.4%, 50.3% 13.1%, 21.3% 36.2%, 0.1% 0.1%, 5.4% 49.1%, 21.4% 36.4%, 58.9% 100%, 73.6% 48.6%)"
+		>
+		</div>
+	</div>
 
-    <div class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 transform-gpu justify-center overflow-hidden blur-3xl sm:bottom-0 sm:right-[calc(50%-6rem)] sm:top-auto sm:translate-y-0 sm:transform-gpu sm:justify-end"
-         aria-hidden="true">
-        <div class="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-25"
-             style="clip-path: polygon(73.6% 48.6%, 91.7% 88.5%, 100% 53.9%, 97.4% 18.1%, 92.5% 15.4%, 75.7% 36.3%, 55.3% 52.8%, 46.5% 50.9%, 45% 37.4%, 50.3% 13.1%, 21.3% 36.2%, 0.1% 0.1%, 5.4% 49.1%, 21.4% 36.4%, 58.9% 100%, 73.6% 48.6%)"></div>
-    </div>
-    
-    <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
-            <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+	<div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+		<div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
+			<div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+				<h2 class="text-3xl tracking-tight text-black font-nunito-sans">
+					Get in touch
+				</h2>
+				<p class="mt-6 text-lg leading-8 text-gray-600 font-nunito">
+					Got an idea in mind? Write to us and let's bring it to life together!
+				</p>
 
-                <h2 class="text-3xl tracking-tight text-black font-nunito-sans">Get in touch</h2>
-                <p class="mt-6 text-lg leading-8 text-gray-600 font-nunito">
-                    Got an idea in mind? Write to us and let's bring it to life together!
-                </p>
+				<div class="mx-auto mt-6 max-w-lg space-y-4">
+					<div class="flex gap-x-6"></div>
+					<div class="flex gap-x-6"></div>
+					<div class="flex gap-x-6">
+						<div
+							class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#00629e]"
+						>
+							<svg
+								class="h-6 w-6 text-white"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								aria-hidden="true"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
+								></path>
+							</svg>
+						</div>
+						<div>
+							<h3
+								class="text-base font-semibold leading-7 text-black font-nunito-sans"
+							>
+								Technical support
+							</h3>
+							<p class="mt-2 leading-7 text-gray-600 font-nunito">
+								Facing technical hurdles? Reach out for expert support and
+								guidance!
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<form
+			id="contact-form"
+			action=""
+			method="post"
+			class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
+		>
+			<input
+				type="hidden"
+				name="csrfmiddlewaretoken"
+				value="Z0bmepYoKOgOHKPQgiZx3LOBVCVLKhetntCGueWINfWsoskZOsUYYa2sCelk4Wz1"
+			/>
+			<div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+				<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+					<div>
+						<label
+							for="from_name"
+							class="block text-sm font-nunito leading-6 text-black"
+						>
+							First name<span class="text-xs text-red-500">*</span>
+						</label>
+						<div class="mt-2.5">
+							<input
+								type="text"
+								id="from_name"
+								name="from_name"
+								maxlength="50"
+								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
+								required
+							/>
+						</div>
+					</div>
+					<div>
+						<label
+							for="from_last_name"
+							class="block text-sm font-nunito leading-6 text-black"
+						>
+							Last name<span class="text-xs text-red-500">*</span>
+						</label>
+						<div class="mt-2.5">
+							<input
+								type="text"
+								id="from_last_name"
+								name="from_last_name"
+								maxlength="50"
+								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
+								required
+							/>
+						</div>
+					</div>
+					<div class="sm:col-span-2">
+						<label
+							for="reply_to"
+							class="block text-sm font-nunito leading-6 text-black"
+						>
+							Email<span class="text-xs text-red-500">*</span>
+						</label>
+						<div class="mt-2.5">
+							<input
+								type="email"
+								id="reply_to"
+								name="reply_to"
+								maxlength="254"
+								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
+								required
+							/>
+						</div>
+					</div>
+					<div class="sm:col-span-2">
+						<label
+							for="id_phone"
+							class="block text-sm font-nunito leading-6 text-black"
+						>
+							Phone number
+						</label>
+						<div class="mt-2.5">
+							<input
+								type="text"
+								name="phone"
+								required
+								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
+								id="id_phone"
+							/>
+						</div>
+					</div>
+					<div class="sm:col-span-2">
+						<label
+							for="message"
+							class="block text-sm font-nunito leading-6 text-black"
+						>
+							Message<span class="text-xs text-red-500">*</span>
+						</label>
+						<div class="mt-2.5">
+							<textarea
+								name="message"
+								id="message"
+								cols="40"
+								rows="10"
+								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
+								required
+								id="id_message"></textarea>
+						</div>
+					</div>
+				</div>
 
+				<div class="cf-turnstile mt-5" data-sitekey="0x4AAAAAABfUYC-k_-g6SXhP"></div>
 
-                <div class="mx-auto mt-6 max-w-lg space-y-4">
-                    <div class="flex gap-x-6">
-                        
-                    </div>
-                    <div class="flex gap-x-6">
-                        
-                    </div>
-                    <div class="flex gap-x-6">
-                        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#00629e]">
-                            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                 stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-base font-semibold leading-7 text-black font-nunito-sans">
-                                Technical support
-                            </h3>
-                            <p class="mt-2 leading-7 text-gray-600 font-nunito">
-                                Facing technical hurdles? Reach out for expert support and guidance!
-                            </p>
-                            
-                        </div>
-                    </div>
-                </div>
+				<div class="mt-8 flex justify-end">
+					<button
+						type="submit"
+						class="rounded-md border border-black bg-[#00629e] px-3.5 py-2.5 text-center text-sm text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+					>
+						Send message
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
 
-
-            </div>
-        </div>
-        <form action="" method="post" class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
-            <input type="hidden" name="csrfmiddlewaretoken"
-                   value="Z0bmepYoKOgOHKPQgiZx3LOBVCVLKhetntCGueWINfWsoskZOsUYYa2sCelk4Wz1">
-            <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-                <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                    <div>
-                        <label for="id_first_name" class="block text-sm font-nunito leading-6 text-black">
-                            First name<span class="text-xs text-red-500">*</span>
-                        </label>
-                        <div class="mt-2.5">
-                            <input type="text" name="first_name" maxlength="50"
-                                   class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
-                                   required id="id_first_name">
-                        </div>
-
-                    </div>
-                    <div>
-                        <label for="id_last_name" class="block text-sm font-nunito leading-6 text-black">
-                            Last name<span class="text-xs text-red-500">*</span>
-                        </label>
-                        <div class="mt-2.5">
-                            <input type="text" name="last_name" maxlength="50"
-                                   class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
-                                   required id="id_last_name">
-                        </div>
-
-                    </div>
-                    <div class="sm:col-span-2">
-                        <label for="id_email" class="block text-sm font-nunito leading-6 text-black">
-                            Email<span class="text-xs text-red-500">*</span>
-                        </label>
-                        <div class="mt-2.5">
-                            <input type="email" name="email" maxlength="254"
-                                   class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
-                                   required id="id_email">
-                        </div>
-
-                    </div>
-                    <div class="sm:col-span-2">
-                        <label for="id_phone" class="block text-sm font-nunito leading-6 text-black">
-                            Phone number
-                        </label>
-                        <div class="mt-2.5">
-                            <input type="text" name="phone"
-                                   class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
-                                   id="id_phone">
-                        </div>
-
-                    </div>
-                    <div class="sm:col-span-2">
-                        <label for="id_message" class="block text-sm font-nunito leading-6 text-black">
-                            Message<span class="text-xs text-red-500">*</span>
-                        </label>
-                        <div class="mt-2.5">
-                                <textarea name="message" cols="40" rows="10"
-                                          class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
-                                          required id="id_message"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="mt-8 flex justify-end">
-                    <button type="submit"
-                            class="rounded-md border border-black bg-[#00629e] px-3.5 py-2.5 text-center text-sm font-nunito text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
-                        Send message
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <div class="absolute left-1/2 right-0 top-full -z-10 hidden -translate-y-1/2 transform-gpu overflow-hidden blur-3xl sm:block"
-         aria-hidden="true">
-        <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-             style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div>
-
+	<div
+		class="absolute left-1/2 right-0 top-full -z-10 hidden -translate-y-1/2 transform-gpu overflow-hidden blur-3xl sm:block"
+		aria-hidden="true"
+	>
+		<div
+			class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+		>
+		</div>
+	</div>
 </div>
 
 <style>
-  input, textarea {
-    border: 2px solid #00629e; /* Color del borde */
-    border-radius: 6px; /* Bordes redondeados */
-    padding: 0.5rem; /* Espaciado interno */
-    outline: none; /* Elimina el borde azul predeterminado */
-    transition: border-color 0.3s ease; /* Transición suave */
-  }
+	input,
+	textarea {
+		border: 2px solid #00629e; /* Color del borde */
+		border-radius: 6px; /* Bordes redondeados */
+		padding: 0.5rem; /* Espaciado interno */
+		outline: none; /* Elimina el borde azul predeterminado */
+		transition: border-color 0.3s ease; /* Transición suave */
+	}
 
-  input:focus, textarea:focus {
-    border-color: #004a7c; /* Color del borde al enfocar */
-  }
+	input:focus,
+	textarea:focus {
+		border-color: #004a7c; /* Color del borde al enfocar */
+	}
 </style>
+
+<script is:inline>
+	document
+		.getElementById("contact-form")
+		.addEventListener("submit", function (event) {
+			event.preventDefault();
+
+			emailjs.sendForm("service_dgte8o9", "template_vp3beyz", this).then(
+				function () {
+					alert("Email sent successfully!");
+
+					// Clear the form
+					window.location.reload();
+				},
+				function (error) {
+					alert("Error: " + JSON.stringify(error));
+				}
+			);
+		});
+</script>

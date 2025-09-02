@@ -1,17 +1,21 @@
 ---
+
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Analytics from '@vercel/analytics/astro'
+const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
+
 
 interface Props {
-  title: string;
-  keywords: string;
-  description: string;
+	title: string;
+	keywords: string;
+	description: string;
 }
 
-const {title, keywords, description} = Astro.props;
+const { title, keywords, description } = Astro.props;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html class="h-full bg-white" lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -24,48 +28,72 @@ const {title, keywords, description} = Astro.props;
   <meta name="generator" content="Dashboard"/>
   <title>{title}</title>
 
-  
- 
-</head>
-<body>
 
-<div class="bg-white">
- 
-  <Header/>
+		<!-- Cloudflare reCAPTCHA -->
+		<script
+			is:inline
+			src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+			async
+			defer></script>
 
-  <main class="isolate">
-    <slot />
-  </main>
+		<!-- Cloudflare Web Analytics -->
+		<script
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon='{"token": "${cfToken}"}'
+		></script><!-- End Cloudflare Web Analytics -->
 
-  <!-- Footer -->
-  <div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
-    <Footer/>
-  </div>
-</div>
+		<!-- emailjs config -->
+		<script
+			is:inline
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+		></script>
 
-</body>
+		<!-- emailjs init -->
+		<script is:inline type="text/javascript">
+			(function () {
+				emailjs.init({
+					publicKey: "FxrijuoXpE9UWFLKJ",
+				});
+			})();
+		</script>
+	</head>
+	<body>
+		<div class="bg-white">
+			<Header />
+
+			<main class="isolate">
+				<slot />
+			</main>
+
+			<!-- Footer -->
+			<div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
+				<Footer />
+			</div>
+		</div>
+	</body>
 </html>
 
-
 <script>
-  function setupMenuToggle() {
-    const navBar: HTMLElement = document.getElementById('navBar')!;
-    const closeNavBar = document.getElementById('closeNavBar')!;
-    const openNavBar = document.getElementById('openNavBar')!;
+	function setupMenuToggle() {
+		const navBar: HTMLElement = document.getElementById("navBar")!;
+		const closeNavBar = document.getElementById("closeNavBar")!;
+		const openNavBar = document.getElementById("openNavBar")!;
 
-    closeNavBar.addEventListener('click', toggleMenu);
-    openNavBar.addEventListener('click', toggleMenu);
+		closeNavBar.addEventListener("click", toggleMenu);
+		openNavBar.addEventListener("click", toggleMenu);
 
-    function toggleMenu() {
-      navBar.classList.toggle("hidden");
-    }
-  }
+		function toggleMenu() {
+			navBar.classList.toggle("hidden");
+		}
+	}
 
-  // Inicializar el menú toggle al cargar la página
-  setupMenuToggle();
+	// Inicializar el menú toggle al cargar la página
+	setupMenuToggle();
 
-  // Re-enlazar eventos después de cada navegación
-  document.addEventListener('astro:after-swap', () => {
-    setupMenuToggle();
-  });
+	// Re-enlazar eventos después de cada navegación
+	document.addEventListener("astro:after-swap", () => {
+		setupMenuToggle();
+	});
 </script>
