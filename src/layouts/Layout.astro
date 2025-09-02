@@ -3,7 +3,6 @@
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Analytics from '@vercel/analytics/astro'
-const cfToken = import.meta.env.VITE_CF_ANALYTICS_TOKEN;
 
 
 interface Props {
@@ -24,7 +23,7 @@ const { title, keywords, description } = Astro.props;
   <meta name="keywords" content={keywords}/>
   <meta name="author" content="MNL Innovation"/>
   <meta name="viewport" content="width=device-width"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
+	<link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="generator" content="Dashboard"/>
   <title>{title}</title>
 
@@ -36,12 +35,7 @@ const { title, keywords, description } = Astro.props;
 			async
 			defer></script>
 
-		<!-- Cloudflare Web Analytics -->
-		<script
-			defer
-			src="https://static.cloudflareinsights.com/beacon.min.js"
-			data-cf-beacon='{"token": "${cfToken}"}'
-		></script><!-- End Cloudflare Web Analytics -->
+
 
 		<!-- emailjs config -->
 		<script
