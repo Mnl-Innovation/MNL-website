@@ -18,7 +18,7 @@ const { title, keywords, description } = Astro.props;
 <html class="h-full bg-white" lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <Analytics />
+
   <meta name="description" content={description}/>
   <meta name="keywords" content={keywords}/>
   <meta name="author" content="MNL Innovation"/>
@@ -26,6 +26,8 @@ const { title, keywords, description } = Astro.props;
 	<link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="generator" content="Dashboard"/>
   <title>{title}</title>
+	<Analytics />
+</head>
 
 
 		<!-- Cloudflare reCAPTCHA -->
@@ -34,8 +36,6 @@ const { title, keywords, description } = Astro.props;
 			src="https://challenges.cloudflare.com/turnstile/v0/api.js"
 			async
 			defer></script>
-
-
 
 		<!-- emailjs config -->
 		<script
