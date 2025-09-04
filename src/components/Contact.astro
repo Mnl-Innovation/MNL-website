@@ -4,6 +4,9 @@ interface Props {}
 const {} = Astro.props;
 ---
 
+<!-- intl-tel-input CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css">
+
 <div class="relative isolate pt-24">
 	<div
 		class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 transform-gpu justify-center overflow-hidden blur-3xl sm:bottom-0 sm:right-[calc(50%-6rem)] sm:top-auto sm:translate-y-0 sm:transform-gpu sm:justify-end"
@@ -139,11 +142,11 @@ const {} = Astro.props;
 						</label>
 						<div class="mt-2.5">
 							<input
-								type="text"
+								type="tel"
 								name="phone"
-								required
 								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
 								id="id_phone"
+								placeholder="Enter your phone number"
 							/>
 						</div>
 					</div>
@@ -162,7 +165,7 @@ const {} = Astro.props;
 								rows="10"
 								class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-white/20 focus:ring-0 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6"
 								required
-								id="id_message"></textarea>
+								placeholder="Tell us about your project or idea..."></textarea>
 						</div>
 					</div>
 				</div>
@@ -172,7 +175,7 @@ const {} = Astro.props;
 				<div class="mt-8 flex justify-end">
 					<button
 						type="submit"
-						class="rounded-md border border-black bg-[#00629e] px-3.5 py-2.5 text-center text-sm text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+						class="rounded-md border border-black bg-[#00629e] px-3.5 py-2.5 text-center text-sm text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black hover:bg-[#004a7c] transition-colors duration-200"
 					>
 						Send message
 					</button>
@@ -207,18 +210,223 @@ const {} = Astro.props;
 	textarea:focus {
 		border-color: #004a7c; /* Color del borde al enfocar */
 	}
+
+	/* intl-tel-input customization */
+	:global(.iti) {
+		width: 100% !important;
+	}
+
+	:global(.iti__tel-input) {
+		border: 2px solid #00629e !important;
+		border-radius: 6px !important;
+		padding: 0.5rem 0.5rem 0.5rem 3.5rem !important;
+		outline: none !important;
+		transition: border-color 0.3s ease !important;
+		background-color: #f3f4f6 !important;
+		width: 100% !important;
+		height: auto !important;
+		color: #1f2937 !important;
+		font-size: 0.875rem !important;
+		line-height: 1.5rem !important;
+	}
+
+	:global(.iti__tel-input:focus) {
+		border-color: #004a7c !important;
+		box-shadow: none !important;
+	}
+
+	:global(.iti__country-list) {
+		border-radius: 8px !important;
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+		border: 1px solid #d1d5db !important;
+		max-height: 200px !important;
+		overflow-y: auto !important;
+		background: white !important;
+	}
+
+	:global(.iti__country) {
+		padding: 0.75rem 1rem !important;
+		border-bottom: 1px solid #f3f4f6 !important;
+	}
+
+	:global(.iti__country:hover) {
+		background: #f9fafb !important;
+	}
+
+	:global(.iti__country:last-child) {
+		border-bottom: none !important;
+	}
+
+	:global(.iti__selected-country) {
+		padding: 0 0.75rem !important;
+		border-radius: 6px 0 0 6px !important;
+		background-color: #f3f4f6 !important;
+	}
+
+	:global(.iti__selected-country:hover) {
+		background-color: #e5e7eb !important;
+	}
+
+	:global(.iti__arrow) {
+		border-left: 4px solid transparent !important;
+		border-right: 4px solid transparent !important;
+		border-top: 4px solid #6b7280 !important;
+		border-bottom: none !important;
+	}
+
+	:global(.iti__arrow--up) {
+		border-top: none !important;
+		border-bottom: 4px solid #6b7280 !important;
+	}
+
+	/* Error validation styles */
+	:global(.iti--allow-dropdown .iti__tel-input.phone-error) {
+		border-color: #ef4444 !important;
+	}
+
+	:global(.iti--allow-dropdown .iti__tel-input.phone-valid) {
+		border-color: #22c55e !important;
+	}
 </style>
 
+<!-- intl-tel-input JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+
 <script is:inline>
+	let iti; // Global variable to store intl-tel-input instance
+
+	document.addEventListener('DOMContentLoaded', function() {
+		// Initialize intl-tel-input
+		const phoneInput = document.querySelector('#id_phone');
+		
+		if (phoneInput) {
+			iti = window.intlTelInput(phoneInput, {
+				initialCountry: 'us', // Default to Colombia
+				preferredCountries: ['co', 'us', 'mx', 'br', 'ar', 'pe', 'cl', 'ec'],
+				separateDialCode: true,
+				nationalMode: true,
+				autoPlaceholder: 'aggressive',
+				placeholderNumberType: 'MOBILE',
+				utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/utils.js'
+			});
+
+			// Real-time validation
+			phoneInput.addEventListener('input', function() {
+				const phoneNumber = phoneInput.value.trim();
+				
+				if (phoneNumber === '') {
+					phoneInput.classList.remove('phone-error', 'phone-valid');
+					return;
+				}
+
+				if (iti.isValidNumber()) {
+					phoneInput.classList.remove('phone-error');
+					phoneInput.classList.add('phone-valid');
+				} else {
+					phoneInput.classList.remove('phone-valid');
+					phoneInput.classList.add('phone-error');
+				}
+			});
+
+			// Validation on country change
+			phoneInput.addEventListener('countrychange', function() {
+				if (phoneInput.value.trim()) {
+					// Trigger input event to re-validate
+					phoneInput.dispatchEvent(new Event('input'));
+				}
+			});
+		}
+	});
+
+	// Enhanced form submission with phone validation
 	document
 		.getElementById("contact-form")
 		.addEventListener("submit", function (event) {
 			event.preventDefault();
 
+			const phoneInput = document.querySelector('#id_phone');
+			let isValid = true;
+			let errorMessage = '';
+
+			// Validate phone number if provided
+			if (phoneInput && phoneInput.value.trim()) {
+				if (!iti.isValidNumber()) {
+					isValid = false;
+					errorMessage = 'Please enter a valid phone number.';
+					phoneInput.classList.add('phone-error');
+					phoneInput.focus();
+				} else {
+					phoneInput.classList.remove('phone-error');
+					phoneInput.classList.add('phone-valid');
+				}
+			}
+
+			if (!isValid) {
+				alert(errorMessage);
+				return;
+			}
+
+			// Get phone data from intl-tel-input
+			let fullPhoneNumber = '';
+			let countryCode = '';
+			let countryName = '';
+			let nationalNumber = '';
+
+			if (iti && phoneInput.value.trim()) {
+				fullPhoneNumber = iti.getNumber(); // Full international number (e.g., +57 300 123 4567)
+				const countryData = iti.getSelectedCountryData();
+				countryCode = countryData.dialCode; // Just the dial code (e.g., "57")
+				countryName = countryData.name; // Country name (e.g., "Colombia")
+				nationalNumber = phoneInput.value.trim(); // National format number
+			}
+			
+			// Add all phone-related data to the form for EmailJS
+			if (fullPhoneNumber) {
+				// Full international phone number
+				let hiddenPhoneInput = document.querySelector('input[name="full_phone"]');
+				if (!hiddenPhoneInput) {
+					hiddenPhoneInput = document.createElement('input');
+					hiddenPhoneInput.type = 'hidden';
+					hiddenPhoneInput.name = 'full_phone';
+					this.appendChild(hiddenPhoneInput);
+				}
+				hiddenPhoneInput.value = fullPhoneNumber;
+
+				// Country code (dial code without +)
+				let hiddenCountryCodeInput = document.querySelector('input[name="country_code"]');
+				if (!hiddenCountryCodeInput) {
+					hiddenCountryCodeInput = document.createElement('input');
+					hiddenCountryCodeInput.type = 'hidden';
+					hiddenCountryCodeInput.name = 'country_code';
+					this.appendChild(hiddenCountryCodeInput);
+				}
+				hiddenCountryCodeInput.value = countryCode;
+
+				// Country name
+				let hiddenCountryNameInput = document.querySelector('input[name="country_name"]');
+				if (!hiddenCountryNameInput) {
+					hiddenCountryNameInput = document.createElement('input');
+					hiddenCountryNameInput.type = 'hidden';
+					hiddenCountryNameInput.name = 'country_name';
+					this.appendChild(hiddenCountryNameInput);
+				}
+				hiddenCountryNameInput.value = countryName;
+
+				// National number (local format)
+				let hiddenNationalNumberInput = document.querySelector('input[name="national_number"]');
+				if (!hiddenNationalNumberInput) {
+					hiddenNationalNumberInput = document.createElement('input');
+					hiddenNationalNumberInput.type = 'hidden';
+					hiddenNationalNumberInput.name = 'national_number';
+					this.appendChild(hiddenNationalNumberInput);
+				}
+				hiddenNationalNumberInput.value = nationalNumber;
+			}
+
+			// Send email with EmailJS
 			emailjs.sendForm("service_dgte8o9", "template_vp3beyz", this).then(
 				function () {
 					alert("Email sent successfully!");
-
 					// Clear the form
 					window.location.reload();
 				},
