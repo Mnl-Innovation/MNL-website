@@ -41,7 +41,8 @@ const {} = Astro.props;
 		>
 			<img
 				id="image"
-				class="rounded-xl top-0 left-0 w-full h-auto duration-1000 ease-in-out"
+				class="rounded-xl top-0 left-0 w-full duration-1000 ease-in-out"
+				style="height: 427px; object-fit: cover; object-position: center;"
 				src="/images/hero-2.png"
 			/>
 		</div>
@@ -54,7 +55,9 @@ const {} = Astro.props;
 	<script is:inline>
 		const images = [
 			"/images/hero-2.png",
-			"/images/hero-3.png",
+			"/images/hero-3.jpg",
+			"/images/hero-4.jpg",
+			"/images/services/cibersecurity.webp",
 			
 		];
 		let currentIndex = 0;
@@ -93,7 +96,7 @@ const {} = Astro.props;
 			}
 
 			// Starts image transition every 7 seconds (includes 1 second for transition duration)
-			setInterval(changeImage, 7000);
+			setInterval(changeImage, 5000);
 		}
 
 		// Listen for Astro's custom event when the component is mounted
