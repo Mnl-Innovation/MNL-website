@@ -5,7 +5,7 @@ const {} = Astro.props;
 ---
 
 <div class="mx-auto mt-12 max-w-7xl px-6 sm:mt-32 lg:px-8" id="services">
-	<div class="mx-auto  lg:text-center">
+	<div class="mx-auto lg:text-center">
 		<!-- <h2 class="text-2xl font-semibold leading-7">
 			<span class="bg-[#00629e] text-white px-10 py-1 rounded-full"
 				>Services</span
@@ -47,7 +47,9 @@ const {} = Astro.props;
 							</svg>
 						</a>
 					</div>
-					<span>Managed IT Services</span>
+					<a href="/services/managed">
+						<span>Managed IT Services</span>
+					</a>
 				</dt>
 				<dd class="mt-4 text-base leading-7 text-gray-600">
 					Proactive management of your IT systems to ensure reliability,
@@ -79,7 +81,9 @@ const {} = Astro.props;
 							</svg>
 						</a>
 					</div>
-					<span>Cloud Solutions</span>
+					<a href="/services/cloud">
+						<span>Cloud Solutions</span>
+					</a>
 				</dt>
 				<dd class="mt-4 text-base leading-7 text-gray-600">
 					Scalable and secure infrastructure using Microsoft 365, Google
@@ -111,7 +115,9 @@ const {} = Astro.props;
 							</svg>
 						</a>
 					</div>
-					<span>Cybersecurity</span>
+					<a href="/services/cibersecurity">
+						<span>Cybersecurity</span>
+					</a>
 				</dt>
 				<dd class="mt-4 text-base leading-7 text-gray-600">
 					Multi-layer protection with threat detection, firewall security, and
@@ -126,7 +132,7 @@ const {} = Astro.props;
 					<div
 						class="flex h-10 w-10 lg:h-16 lg:w-16 items-center justify-center rounded-lg bg-[#00629e]"
 					>
-						<a href="/product/web">
+						<a href="/services/web">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
@@ -143,7 +149,9 @@ const {} = Astro.props;
 							</svg>
 						</a>
 					</div>
-					<span>Web Development</span>
+					<a href="/services/web">
+						<span>Web Development</span>
+					</a>
 				</dt>
 				<dd class="mt-4 text-base leading-7 text-gray-600">
 					Custom applications and integrations tailored to your workflow.
@@ -174,7 +182,9 @@ const {} = Astro.props;
 							</svg>
 						</a>
 					</div>
-					<span>Strategic IT Consulting</span>
+					<a href="/services/itconsulting">
+						<span>Strategic IT Consulting</span>
+					</a>
 				</dt>
 				<dd class="mt-4 text-base leading-7 text-gray-600">
 					Virtual CIO support, IT planning, budgeting, and vendor management.
@@ -205,7 +215,9 @@ const {} = Astro.props;
 							</svg>
 						</a>
 					</div>
-					<span>Data Analytics</span>
+					<a href="/services/analytics">
+						<span>Data Analytics</span>
+					</a>
 				</dt>
 				<dd class="mt-4 text-base leading-7 text-gray-600">
 					Transform data into decisions with dashboards, KPIs, and predictive
@@ -220,7 +232,7 @@ const {} = Astro.props;
 					<div
 						class="flex h-10 w-10 lg:h-16 lg:w-16 items-center justify-center rounded-lg bg-[#00629e]"
 					>
-						<a href="/product/microsoft">
+						<a href="/services/microsoft">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="24"
@@ -242,14 +254,16 @@ const {} = Astro.props;
 							</svg>
 						</a>
 					</div>
-					<span>Microsoft 365 Services</span>
+					<a href="/services/microsoft">
+						<span>Microsoft 365 Services</span>
+					</a>
 				</dt>
 				<dd class="mt-4 text-base leading-7 text-gray-600">
 					Tenant setup, email migration, security configuration, and user
 					training.
 				</dd>
 			</div>
-
+			<!-- Innovation & Emerging Tech -->
 			<div class="relative">
 				<dt
 					class="text-base font-semibold leading-7 text-gray-900 flex items-center gap-4"
@@ -257,29 +271,33 @@ const {} = Astro.props;
 					<div
 						class="flex h-10 w-10 lg:h-16 lg:w-16 items-center justify-center rounded-lg bg-[#00629e]"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							class="h-6 w-6 lg:h-10 lg:w-10 text-white"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="lucide lucide-binary-icon lucide-binary"
-							><rect x="14" y="14" width="4" height="6" rx="2"></rect><rect
-								x="6"
-								y="4"
-								width="4"
-								height="6"
-								rx="2"></rect><path d="M6 20h4"></path><path d="M14 10h4"
-							></path><path d="M6 14h2v6"></path><path d="M14 4h2v6"
-							></path></svg
-						>
+						<a href="/services/innovation">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								class="h-6 w-6 lg:h-10 lg:w-10 text-white"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide lucide-binary-icon lucide-binary"
+								><rect x="14" y="14" width="4" height="6" rx="2"></rect><rect
+									x="6"
+									y="4"
+									width="4"
+									height="6"
+									rx="2"></rect><path d="M6 20h4"></path><path d="M14 10h4"
+								></path><path d="M6 14h2v6"></path><path d="M14 4h2v6"
+								></path></svg
+							>
+						</a>
 					</div>
-					<span>Innovation & Emerging Tech</span>
+					<a href="/services/innovation">
+						<span>Innovation & Emerging Tech</span>
+					</a>
 				</dt>
 				<dd class="mt-4 text-base leading-7 text-gray-600">
 					AI, IoT, and automation strategies to modernize your operations.
