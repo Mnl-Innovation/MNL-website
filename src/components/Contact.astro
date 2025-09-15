@@ -1,11 +1,57 @@
 ---
 interface Props {}
 
-const {} = Astro.props;
+const { searchParams } = Astro.url;
+const service = searchParams.get("service") ?? "";
+
+type ServiceKey = "cibersecurity" | "managed" | "cloud" | "web";
+
+const serviceData: Record<
+	ServiceKey,
+	{ title: string; description: string; icon: string }
+> = {
+	cibersecurity: {
+		title: "Get in touch with our Cybersecurity team",
+		description:
+			"Protect your business with advanced cybersecurity solutions. Contact our experts for a secure future.",
+		icon: `<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+	},
+	managed: {
+		title: "Get in touch about Managed IT Services",
+		description:
+			"Optimize your IT infrastructure with our managed services. Reach out for tailored solutions.",
+		icon: `<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>`,
+	},
+	cloud: {
+		title: "Get in touch about Cloud Solutions",
+		description:
+			"Scale your business with our cloud solutions. Contact us for migration and optimization.",
+		icon: `<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>`,
+	},
+	web: {
+		title: "Get in touch with our development team",
+		description:
+			"Scale your business with our cloud solutions. Contact us for migration and optimization.",
+		icon: `<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>`,
+	}
+};
+
+const selected =
+	service in serviceData
+		? serviceData[service as ServiceKey]
+		: {
+				title: "Get in touch with us",
+				description:
+					"Got an idea in mind? Write to us and let's bring it to life together!",
+				icon: `<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>`,
+			};
 ---
 
 <!-- intl-tel-input CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css">
+<link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css"
+/>
 
 <div class="relative isolate pt-24">
 	<div
@@ -22,44 +68,26 @@ const {} = Astro.props;
 	<div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
 		<div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
 			<div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-				<h2 class="text-3xl tracking-tight text-black font-nunito-sans">
-					Get in touch
-				</h2>
-				<p class="mt-6 text-lg leading-8 text-gray-600 font-nunito">
-					Got an idea in mind? Write to us and let's bring it to life together!
-				</p>
-
 				<div class="mx-auto mt-6 max-w-lg space-y-4">
-					<div class="flex gap-x-6"></div>
-					<div class="flex gap-x-6"></div>
 					<div class="flex gap-x-6">
 						<div
 							class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#00629e]"
+							id="service-icon"
 						>
-							<svg
-								class="h-6 w-6 text-white"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-								aria-hidden="true"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
-								></path>
-							</svg>
+							<div set:html={selected.icon} id="icon-content" />
 						</div>
 						<div>
 							<h3
 								class="text-base font-semibold leading-7 text-black font-nunito-sans"
+								id="service-title"
 							>
-								Technical support
+								{selected.title}
 							</h3>
-							<p class="mt-2 leading-7 text-gray-600 font-nunito">
-								Facing technical hurdles? Reach out for expert support and
-								guidance!
+							<p
+								class="mt-2 leading-7 text-gray-600 font-nunito"
+								id="service-description"
+							>
+								{selected.description}
 							</p>
 						</div>
 					</div>
@@ -77,6 +105,13 @@ const {} = Astro.props;
 				name="csrfmiddlewaretoken"
 				value="Z0bmepYoKOgOHKPQgiZx3LOBVCVLKhetntCGueWINfWsoskZOsUYYa2sCelk4Wz1"
 			/>
+			<input
+				type="hidden"
+				name="service_type"
+				value={service}
+				id="service_type_field"
+			/>
+
 			<div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
 				<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 					<div>
@@ -170,7 +205,8 @@ const {} = Astro.props;
 					</div>
 				</div>
 
-				<div class="cf-turnstile mt-5" data-sitekey="0x4AAAAAABfUYC-k_-g6SXhP"></div>
+				<div class="cf-turnstile mt-5" data-sitekey="0x4AAAAAABfUYC-k_-g6SXhP">
+				</div>
 
 				<div class="mt-8 flex justify-end">
 					<button
@@ -199,16 +235,16 @@ const {} = Astro.props;
 <style>
 	input,
 	textarea {
-		border: 2px solid #00629e; /* Color del borde */
-		border-radius: 6px; /* Bordes redondeados */
-		padding: 0.5rem; /* Espaciado interno */
-		outline: none; /* Elimina el borde azul predeterminado */
-		transition: border-color 0.3s ease; /* Transición suave */
+		border: 2px solid #00629e;
+		border-radius: 6px;
+		padding: 0.5rem;
+		outline: none;
+		transition: border-color 0.3s ease;
 	}
 
 	input:focus,
 	textarea:focus {
-		border-color: #004a7c; /* Color del borde al enfocar */
+		border-color: #004a7c;
 	}
 
 	/* intl-tel-input customization */
@@ -279,7 +315,6 @@ const {} = Astro.props;
 		border-bottom: 4px solid #6b7280 !important;
 	}
 
-	/* Error validation styles */
 	:global(.iti--allow-dropdown .iti__tel-input.phone-error) {
 		border-color: #ef4444 !important;
 	}
@@ -290,74 +325,121 @@ const {} = Astro.props;
 </style>
 
 <!-- intl-tel-input JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"
+></script>
 
 <script is:inline>
-	let iti; // Global variable to store intl-tel-input instance
+	let iti;
 
-	document.addEventListener('DOMContentLoaded', function() {
+	document.addEventListener("DOMContentLoaded", function () {
+		// Client-side service update logic
+		const serviceData = {
+			cibersecurity: {
+				title: "Get in touch with our Cybersecurity team",
+				description:
+					"Protect your business with advanced cybersecurity solutions. Contact our experts for a secure future.",
+				icon: `<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+			},
+			managed: {
+				title: "Get in touch about Managed IT Services",
+				description:
+					"Optimize your IT infrastructure with our managed services. Reach out for tailored solutions.",
+				icon: `<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"/></svg>`,
+			},
+			cloud: {
+				title: "Get in touch about Cloud Solutions",
+				description:
+					"Scale your business with our cloud solutions. Contact us for migration and optimization.",
+				icon: `<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>`,
+			},
+		};
+
+		// Get URL parameter on client side
+		const urlParams = new URLSearchParams(window.location.search);
+		const clientService = urlParams.get("service");
+
+		// Update content if we have a valid service parameter
+		if (clientService && serviceData[clientService]) {
+			const selectedService = serviceData[clientService];
+
+			// Update title
+			const titleElement = document.getElementById("service-title");
+			if (titleElement) titleElement.textContent = selectedService.title;
+
+			// Update description
+			const descElement = document.getElementById("service-description");
+			if (descElement) descElement.textContent = selectedService.description;
+
+			// Update icon
+			const iconElement = document.getElementById("icon-content");
+			if (iconElement) iconElement.innerHTML = selectedService.icon;
+
+			// Update hidden form field
+			const serviceField = document.getElementById("service_type_field");
+			if (serviceField) serviceField.value = clientService;
+
+			console.log("Service updated to:", clientService);
+		}
+
 		// Initialize intl-tel-input
-		const phoneInput = document.querySelector('#id_phone');
-		
+		const phoneInput = document.querySelector("#id_phone");
+
 		if (phoneInput) {
 			iti = window.intlTelInput(phoneInput, {
-				initialCountry: 'us', // Default to Colombia
-				preferredCountries: ['co', 'us', 'mx', 'br', 'ar', 'pe', 'cl', 'ec'],
+				initialCountry: "us",
+				preferredCountries: ["co", "us", "mx", "br", "ar", "pe", "cl", "ec"],
 				separateDialCode: true,
 				nationalMode: true,
-				autoPlaceholder: 'aggressive',
-				placeholderNumberType: 'MOBILE',
-				utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/utils.js'
+				autoPlaceholder: "aggressive",
+				placeholderNumberType: "MOBILE",
+				utilsScript:
+					"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/utils.js",
 			});
 
-			// Real-time validation
-			phoneInput.addEventListener('input', function() {
+			phoneInput.addEventListener("input", function () {
 				const phoneNumber = phoneInput.value.trim();
-				
-				if (phoneNumber === '') {
-					phoneInput.classList.remove('phone-error', 'phone-valid');
+
+				if (phoneNumber === "") {
+					phoneInput.classList.remove("phone-error", "phone-valid");
 					return;
 				}
 
 				if (iti.isValidNumber()) {
-					phoneInput.classList.remove('phone-error');
-					phoneInput.classList.add('phone-valid');
+					phoneInput.classList.remove("phone-error");
+					phoneInput.classList.add("phone-valid");
 				} else {
-					phoneInput.classList.remove('phone-valid');
-					phoneInput.classList.add('phone-error');
+					phoneInput.classList.remove("phone-valid");
+					phoneInput.classList.add("phone-error");
 				}
 			});
 
-			// Validation on country change
-			phoneInput.addEventListener('countrychange', function() {
+			phoneInput.addEventListener("countrychange", function () {
 				if (phoneInput.value.trim()) {
-					// Trigger input event to re-validate
-					phoneInput.dispatchEvent(new Event('input'));
+					phoneInput.dispatchEvent(new Event("input"));
 				}
 			});
 		}
 	});
 
-	// Enhanced form submission with phone validation
 	document
 		.getElementById("contact-form")
 		.addEventListener("submit", function (event) {
 			event.preventDefault();
 
-			const phoneInput = document.querySelector('#id_phone');
+			const phoneInput = document.querySelector("#id_phone");
 			let isValid = true;
-			let errorMessage = '';
+			let errorMessage = "";
 
-			// Validate phone number if provided
 			if (phoneInput && phoneInput.value.trim()) {
 				if (!iti.isValidNumber()) {
 					isValid = false;
-					errorMessage = 'Please enter a valid phone number.';
-					phoneInput.classList.add('phone-error');
+					errorMessage = "Please enter a valid phone number.";
+					phoneInput.classList.add("phone-error");
 					phoneInput.focus();
 				} else {
-					phoneInput.classList.remove('phone-error');
-					phoneInput.classList.add('phone-valid');
+					phoneInput.classList.remove("phone-error");
+					phoneInput.classList.add("phone-valid");
 				}
 			}
 
@@ -366,68 +448,68 @@ const {} = Astro.props;
 				return;
 			}
 
-			// Get phone data from intl-tel-input
-			let fullPhoneNumber = '';
-			let countryCode = '';
-			let countryName = '';
-			let nationalNumber = '';
+			let fullPhoneNumber = "";
+			let countryCode = "";
+			let countryName = "";
+			let nationalNumber = "";
 
 			if (iti && phoneInput.value.trim()) {
-				fullPhoneNumber = iti.getNumber(); // Full international number (e.g., +57 300 123 4567)
+				fullPhoneNumber = iti.getNumber();
 				const countryData = iti.getSelectedCountryData();
-				countryCode = countryData.dialCode; // Just the dial code (e.g., "57")
-				countryName = countryData.name; // Country name (e.g., "Colombia")
-				nationalNumber = phoneInput.value.trim(); // National format number
+				countryCode = countryData.dialCode;
+				countryName = countryData.name;
+				nationalNumber = phoneInput.value.trim();
 			}
-			
-			// Add all phone-related data to the form for EmailJS
+
 			if (fullPhoneNumber) {
-				// Full international phone number
-				let hiddenPhoneInput = document.querySelector('input[name="full_phone"]');
+				let hiddenPhoneInput = document.querySelector(
+					'input[name="full_phone"]'
+				);
 				if (!hiddenPhoneInput) {
-					hiddenPhoneInput = document.createElement('input');
-					hiddenPhoneInput.type = 'hidden';
-					hiddenPhoneInput.name = 'full_phone';
+					hiddenPhoneInput = document.createElement("input");
+					hiddenPhoneInput.type = "hidden";
+					hiddenPhoneInput.name = "full_phone";
 					this.appendChild(hiddenPhoneInput);
 				}
 				hiddenPhoneInput.value = fullPhoneNumber;
 
-				// Country code (dial code without +)
-				let hiddenCountryCodeInput = document.querySelector('input[name="country_code"]');
+				let hiddenCountryCodeInput = document.querySelector(
+					'input[name="country_code"]'
+				);
 				if (!hiddenCountryCodeInput) {
-					hiddenCountryCodeInput = document.createElement('input');
-					hiddenCountryCodeInput.type = 'hidden';
-					hiddenCountryCodeInput.name = 'country_code';
+					hiddenCountryCodeInput = document.createElement("input");
+					hiddenCountryCodeInput.type = "hidden";
+					hiddenCountryCodeInput.name = "country_code";
 					this.appendChild(hiddenCountryCodeInput);
 				}
 				hiddenCountryCodeInput.value = countryCode;
 
-				// Country name
-				let hiddenCountryNameInput = document.querySelector('input[name="country_name"]');
+				let hiddenCountryNameInput = document.querySelector(
+					'input[name="country_name"]'
+				);
 				if (!hiddenCountryNameInput) {
-					hiddenCountryNameInput = document.createElement('input');
-					hiddenCountryNameInput.type = 'hidden';
-					hiddenCountryNameInput.name = 'country_name';
+					hiddenCountryNameInput = document.createElement("input");
+					hiddenCountryNameInput.type = "hidden";
+					hiddenCountryNameInput.name = "country_name";
 					this.appendChild(hiddenCountryNameInput);
 				}
 				hiddenCountryNameInput.value = countryName;
 
-				// National number (local format)
-				let hiddenNationalNumberInput = document.querySelector('input[name="national_number"]');
+				let hiddenNationalNumberInput = document.querySelector(
+					'input[name="national_number"]'
+				);
 				if (!hiddenNationalNumberInput) {
-					hiddenNationalNumberInput = document.createElement('input');
-					hiddenNationalNumberInput.type = 'hidden';
-					hiddenNationalNumberInput.name = 'national_number';
+					hiddenNationalNumberInput = document.createElement("input");
+					hiddenNationalNumberInput.type = "hidden";
+					hiddenNationalNumberInput.name = "national_number";
 					this.appendChild(hiddenNationalNumberInput);
 				}
 				hiddenNationalNumberInput.value = nationalNumber;
 			}
 
-			// Send email with EmailJS
 			emailjs.sendForm("service_dgte8o9", "template_vp3beyz", this).then(
 				function () {
 					alert("Email sent successfully!");
-					// Clear the form
 					window.location.reload();
 				},
 				function (error) {

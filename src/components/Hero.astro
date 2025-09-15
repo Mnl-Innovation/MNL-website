@@ -65,10 +65,6 @@ const {} = Astro.props;
 		function initializeImageTransition() {
 			const imageElement = document.getElementById("image");
 
-			// Debugging: Log the initial image element and its source
-			console.log("Image element:", imageElement);
-			console.log("Initial image source:", imageElement?.src);
-
 			// Initially, set the image opacity to 100 to ensure it is visible
 			imageElement?.classList.remove("opacity-0");
 
@@ -83,9 +79,6 @@ const {} = Astro.props;
 					}
 					if (imageElement) {
 						imageElement.src = images[currentIndex];
-
-						// Debugging: Log the new image source
-						console.log("New image source:", imageElement.src);
 
 						// Wait for the image to load before making it visible
 						imageElement.onload = () => {
