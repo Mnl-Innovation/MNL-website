@@ -7,52 +7,387 @@ import Layout from "../layouts/Layout.astro";
 	keywords="MNL Innovation, Technology, Business Solutions, IT Services, Digital Transformation"
 	description="IT solutions provider dedicated to helping businesses evolve through technology. We deliver end-to-end IT services—from infrastructure design and cybersecurity to software development and strategic consulting."
 >
-	<div class="mx-auto max-w-7xl px-6 lg:px-8 py-16 pt-32 sm:pt-32 lg:pt-40">
-		<section class="mb-16">
-			<h1 class="text-4xl font-bold text-gray-900 mb-4">Who We Are</h1>
-			<p class="text-lg text-gray-600">
-				MNL Innovation LLC is a forward-thinking IT solutions provider dedicated
-				to helping businesses evolve through technology. We deliver end-to-end
-				IT services—from infrastructure design and cybersecurity to software
-				development and strategic consulting.
-			</p>
+	<!-- Hero Section with Gradient Background -->
+	<div class="relative overflow-hidden bg-gradient-to-br">
+		<div
+			class='absolute inset-0 bg-[url(&apos;data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2300629e" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="1.5"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&apos;)] opacity-40'
+		>
+		</div>
+
+		<div
+			class="relative mx-auto max-w-7xl px-6 lg:px-8 py-20 pt-32 sm:pt-36 lg:pt-44"
+		>
+			<div class="text-center mb-12">
+				<div
+					class="inline-flex items-center px-4 py-2 rounded-full bg-[#00629e]/10 text-[#00629e] text-sm font-medium mb-6 border border-[#00629e]/20"
+				>
+					<svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+						<path
+							d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"
+						></path>
+					</svg>
+					About MNL Innovation
+				</div>
+				<h1
+					class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
+				>
+					Who We <span
+						class="text-transparent bg-clip-text bg-gradient-to-r from-[#00629e] to-blue-600"
+						>Are</span
+					>
+				</h1>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+					MNL Innovation LLC is a forward-thinking IT solutions provider
+					dedicated to helping businesses evolve through technology. We deliver
+					end-to-end IT services—from infrastructure design and cybersecurity to
+					software development and strategic consulting.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Main Content -->
+	<div class="mx-auto max-w-7xl px-6 lg:px-8 py-20">
+		<!-- Mission Section -->
+		<section class="mb-20">
+			<div class="grid lg:grid-cols-2 gap-12 items-center">
+				<div>
+					<div
+						class="inline-flex items-center px-3 py-1 rounded-full bg-[#00629e] text-white text-sm font-medium mb-4"
+					>
+						<svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+							<path
+								fill-rule="evenodd"
+								d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+							></path>
+						</svg>
+						Our Mission
+					</div>
+					<h2 class="text-4xl font-bold text-gray-900 mb-6">
+						Empowering Organizations
+					</h2>
+					<p class="text-lg text-gray-600 leading-relaxed">
+						Our mission is to empower organizations to work smarter, faster, and
+						safer through innovative solutions that streamline operations,
+						safeguard information, and create sustainable growth. We believe in
+						cutting-edge technology solutions that simplify operations, increase
+						security, and drive long-term success.
+					</p>
+				</div>
+				<div class="relative">
+					<img 
+						src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+						alt="Innovation and technology empowerment"
+						class="aspect-square rounded-2xl object-cover shadow-lg"
+					/>
+					<div class="absolute inset-0 bg-gradient-to-br from-[#00629e]/20 to-blue-600/20 rounded-2xl"></div>
+					<div class="absolute -bottom-4 -left-4 w-12 h-12 bg-[#1dc690] rounded-full opacity-60"></div>
+				</div>
+			</div>
 		</section>
 
-		<section class="mb-16">
-			<h2 class="text-3xl font-semibold text-gray-900 mb-4">Mission</h2>
-			<p class="text-lg text-gray-600">
-				To empower businesses through cutting-edge technology solutions that
-				simplify operations, increase security, and drive long-term success.
-			</p>
+		<!-- Our Approach Section -->
+		<section class="mb-20">
+			<div class="grid lg:grid-cols-2 gap-12 items-center">
+				<div class="order-2 lg:order-1 relative">
+					<img 
+						src="/images/mnl-6.avif" 
+						alt="Partnership and collaboration in business"
+						class="aspect-square rounded-2xl object-cover shadow-lg"
+					/>
+					<div class="absolute -top-4 -left-4 w-14 h-14 bg-[#00629e] rounded-full opacity-70"></div>
+					<div class="absolute -bottom-4 -right-4 w-10 h-10 bg-[#1dc690] rounded-full opacity-80"></div>
+				</div>
+				<div class="order-1 lg:order-2">
+					<div
+						class="inline-flex items-center px-3 py-1 rounded-full bg-[#1dc690] text-white text-sm font-medium mb-4"
+					>
+						<svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+							<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+						Our Approach
+					</div>
+					<h2 class="text-4xl font-bold text-gray-900 mb-6">
+						Partnership-Driven Solutions
+					</h2>
+					<div
+						class="bg-gradient-to-r from-[#00629e] to-blue-600 text-white p-6 rounded-xl mb-6"
+					>
+						<p class="text-xl font-semibold">
+							We build partnerships, not projects.
+						</p>
+					</div>
+					<p class="text-lg text-gray-600 leading-relaxed">
+						Every engagement begins with listening—understanding your business
+						goals, challenges, and opportunities. From there, we design tailored
+						solutions, implement with precision, and provide continuous support.
+						Our approach is collaborative, transparent, and always focused on
+						measurable outcomes.
+					</p>
+				</div>
+			</div>
 		</section>
 
-		<section class="mb-16">
-			<h2 class="text-3xl font-semibold text-gray-900 mb-4">Our Approach</h2>
-			<p class="text-lg text-gray-600">
-				We don’t just provide services; we build partnerships. Our team tailors
-				solutions that align with your business goals.
-			</p>
+		<!-- What Sets Us Apart Section -->
+		<section class="mb-20">
+			<div class="text-center mb-12">
+			
+				<h2 class="text-4xl font-bold text-gray-900 mb-8">
+					What Sets Us Apart
+				</h2>
+			</div>
+
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div
+					class="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#00629e]/20"
+				>
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-[#00629e]/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+					>
+					</div>
+					<div class="relative">
+						<div
+							class="w-12 h-12 bg-gradient-to-br from-[#00629e] to-blue-600 rounded-xl flex items-center justify-center mb-4"
+						>
+							<svg
+								class="w-6 h-6 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">
+							Deep Industry Expertise
+						</h3>
+						<p class="text-gray-600">
+							Deep expertise across multiple industries with proven track
+							records.
+						</p>
+					</div>
+				</div>
+
+				<div
+					class="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#00629e]/20"
+				>
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+					>
+					</div>
+					<div class="relative">
+						<div
+							class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-4"
+						>
+							<svg
+								class="w-6 h-6 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">
+							Human-First Support
+						</h3>
+						<p class="text-gray-600">
+							Proactive, human-first support that puts people at the center of
+							technology.
+						</p>
+					</div>
+				</div>
+
+				<div
+					class="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#00629e]/20"
+				>
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+					>
+					</div>
+					<div class="relative">
+						<div
+							class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4"
+						>
+							<svg
+								class="w-6 h-6 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">
+							End-to-End Excellence
+						</h3>
+						<p class="text-gray-600">
+							From strategy to execution to ongoing optimization, we're with you
+							every step.
+						</p>
+					</div>
+				</div>
+
+				<div
+					class="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#00629e]/20"
+				>
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-red-500/5 to-orange-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+					>
+					</div>
+					<div class="relative">
+						<div
+							class="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-600 rounded-xl flex items-center justify-center mb-4"
+						>
+							<svg
+								class="w-6 h-6 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">
+							Security-First Approach
+						</h3>
+						<p class="text-gray-600">
+							Certified practices and frameworks ensure your data and systems
+							remain protected.
+						</p>
+					</div>
+				</div>
+
+				<div
+					class="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#00629e]/20"
+				>
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+					>
+					</div>
+					<div class="relative">
+						<div
+							class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4"
+						>
+							<svg
+								class="w-6 h-6 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">
+							Scalable Solutions
+						</h3>
+						<p class="text-gray-600">
+							Solutions designed to adapt and grow alongside your business
+							needs.
+						</p>
+					</div>
+				</div>
+
+				<div
+					class="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-[#00629e]/20"
+				>
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+					>
+					</div>
+					<div class="relative">
+						<div
+							class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+						>
+							<svg
+								class="w-6 h-6 text-white"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m3 0V2a3 3 0 00-3-3H7a3 3 0 00-3 3v2m16 0H0m20 0l-2 14H6L4 4"
+								></path>
+							</svg>
+						</div>
+						<h3 class="text-xl font-semibold text-gray-900 mb-3">
+							Personal Touch
+						</h3>
+						<p class="text-gray-600">
+							Technology with a personal touch—because behind every system are
+							people who use it.
+						</p>
+					</div>
+				</div>
+			</div>
 		</section>
 
+		<!-- Vision Section -->
 		<section class="mb-16">
-			<h2 class="text-3xl font-semibold text-gray-900 mb-4">
-				What Sets Us Apart
-			</h2>
+			<div
+				class="bg-gradient-to-r from-[#00629e] to-blue-600 rounded-3xl p-12 text-white relative overflow-hidden"
+			>
+				<div
+					class="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/10 -translate-y-32 translate-x-32"
+				>
+				</div>
+				<div
+					class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-white/5 translate-y-24 -translate-x-24"
+				>
+				</div>
 
-			<ul class="list-disc pl-6 text-lg text-gray-600">
-				<li>Deep expertise across multiple industries.</li>
-				<li>Proactive, human-first support.</li>
-				<li>Emphasis on cybersecurity and innovation.</li>
-				<li>Custom solutions for scalable growth.</li>
-			</ul>
-		</section>
-
-		<section class="mt-16">
-			<h2 class="text-3xl font-semibold text-gray-900 mb-4">Vision</h2>
-			<p class="text-lg text-gray-600">
-				To be the trusted technology partner that helps organizations innovate
-				with confidence
-			</p>
+				<div class="relative z-10 max-w-4xl">
+					<div
+						class="inline-flex items-center px-4 py-2 rounded-full bg-[#1dc690] text-white text-sm font-medium mb-6"
+					>
+						<svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+							<path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+							<path
+								fill-rule="evenodd"
+								d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+							></path>
+						</svg>
+						Our Vision
+					</div>
+					<h2 class="text-4xl font-bold mb-6">
+						Shaping the Future of Digital Transformation
+					</h2>
+					<p class="text-xl leading-relaxed opacity-90">
+						Our vision is to become the trusted partner for organizations
+						seeking to innovate responsibly, shaping a future where technology
+						is secure, reliable, and centered on people. We aim to set new
+						standards for how businesses harness digital transformation—with
+						purpose, agility, and trust.
+					</p>
+				</div>
+			</div>
 		</section>
 	</div>
 </Layout>
