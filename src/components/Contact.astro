@@ -6,6 +6,9 @@ const service = searchParams.get("service") ?? "";
 
 type ServiceKey = "cibersecurity" | "managed" | "cloud" | "web";
 
+console.log("Initial service param:", service);  
+
+
 const serviceData: Record<
 	ServiceKey,
 	{ title: string; description: string; icon: string }
