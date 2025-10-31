@@ -1,4 +1,6 @@
-# 🌐 MNL-website  www.mnlinnovation.com
+# 🌐 MNL-website  
+
+## www.mnlinnovation.com
 
 [![Built with Astro](https://img.shields.io/badge/Built%20with-Astro-ff5d01?logo=astro&logoColor=white)](https://astro.build)  
 [![TailwindCSS](https://img.shields.io/badge/Styled%20with-TailwindCSS-06b6d4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)  
